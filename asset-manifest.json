@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/jest-swt/static/js/main.ac114cb8.js",
+    "main.js": "/jest-swt/static/js/main.8239c1f5.js",
     "index.html": "/jest-swt/index.html",
-    "main.ac114cb8.js.map": "/jest-swt/static/js/main.ac114cb8.js.map"
+    "main.8239c1f5.js.map": "/jest-swt/static/js/main.8239c1f5.js.map"
   },
   "entrypoints": [
-    "static/js/main.ac114cb8.js"
+    "static/js/main.8239c1f5.js"
   ]
 }
