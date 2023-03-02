@@ -18,7 +18,7 @@ function App() {
   return (
     <div className="w-75 vh-100 m-auto pt-5">
       {/* Header */}
-      <h1 className="text-center">Jest Test</h1>
+      <h1 className="text-center">Jest Test- SWT</h1>
 
       {/* Input */}
       <div className="input-group w-50 mt-5 mx-auto">
