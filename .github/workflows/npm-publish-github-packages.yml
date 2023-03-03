@@ -30,6 +30,9 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Create build file
+        run mkdir staging  
+
       - name: Deploy with gh-pages
         run: |
           git config --global user.name $user_name
