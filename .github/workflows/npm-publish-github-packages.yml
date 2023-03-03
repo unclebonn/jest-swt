@@ -31,7 +31,7 @@ jobs:
         run: npm run build
 
       - name: Create file store build file
-        run: mkdir staging && cp build staging # tạo thư mục staging chứa file .jar .war sau khi build
+        run: mkdir staging && cp build/* staging # tạo thư mục staging chứa file .jar .war sau khi build
 
       - name: Deploy with gh-pages
         run: |
