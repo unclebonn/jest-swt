@@ -9,6 +9,7 @@ function App() {
     try {
       const fibonacciNumber = fibonacci(input.current.value);
       setResult(fibonacciNumber);
+      setError(null)
     } catch (error) {
       console.log(error.message);
       setError(error.message);

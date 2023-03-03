@@ -13,4 +13,4 @@ export const fibonacci = input => {
     }
 
     return Number(Num3);
-};
+}; 
