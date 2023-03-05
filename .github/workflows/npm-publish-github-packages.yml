@@ -30,6 +30,12 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Make hyperlink to build file
+        uses: actions/upload-artifact@v1
+        with:
+          name: DOWNLOAD-BUILD-FILE-HERE
+          path: build
+
       - name: Deploy with gh-pages
         run: |
           git config --global user.name $user_name
