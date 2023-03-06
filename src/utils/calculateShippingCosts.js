@@ -1,5 +1,5 @@
-function calculateShippingCosts(itemList, destination) {
-    const shippingRates = {
+export function calculateShippingCosts(itemList, destination) {
+    let shippingRates = {
       US: { standard: 10, express: 25 },
       CA: { standard: 15, express: 30 },
       EU: { standard: 20, express: 40 },
@@ -7,15 +7,15 @@ function calculateShippingCosts(itemList, destination) {
     };
   
     if (!Array.isArray(itemList)) {
-      throw new Error('Invalid input: itemList must be an array');
+      throw new TypeError('Invalid input: itemList must be an array');
     }
   
     if (typeof destination !== 'string') {
-      throw new Error('Invalid input: destination must be a string');
+      throw new TypeError('Invalid input: destination must be a string');
     }
   
     if (!Object.keys(shippingRates).includes(destination)) {
-      throw new Error('Invalid input: destination is not supported');
+      throw new RangeError('Invalid input: destination is not supported');
     }
   
     let totalCost = 0;
@@ -26,12 +26,12 @@ function calculateShippingCosts(itemList, destination) {
         throw new Error('Invalid input: item must be an object');
       }
   
-      if (typeof item.name !== 'string' || typeof item.weight !== 'number' || typeof item.price !== 'number') {
-        throw new Error('Invalid input: item must have properties "name" (string), "weight" (number), and "price" (number)');
+      if (typeof item.name !== 'string' || typeof item.weight !== 'number' || typeof item.price !== 'number' || typeof item.quantity !== 'number') {
+        throw new Error('Invalid input: item must have properties "name" (string), "weight" (number), "price" (number) and "quantity" (number)');
       }
-  
-      totalWeight += item.weight;
-      totalCost += item.price;
+      let quantity = item.quantity;
+      totalWeight += item.weight * quantity;
+      totalCost += item.price * quantity;
     }
   
     let shippingCost = 0;

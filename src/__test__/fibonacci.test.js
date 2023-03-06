@@ -1,4 +1,4 @@
-import { fibonacci } from "./fibonancci";
+import { fibonacci } from "../utils/fibonancci";
 
 test('Fibonacci with well input', () => {
     expect(2).toBe(fibonacci("3"));
