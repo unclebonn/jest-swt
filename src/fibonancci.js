@@ -1,8 +1,8 @@
 export const fibonacci = input => {
+    input = Number(input);
+
     // Kiểm tra có phải là số không
     if (isNaN(input)) throw new TypeError("Input must be number!");
-
-    input = Number(input);
 
     // Kiểm tra giá trị nhập vào 
     if (input > 100 || input < 0) throw new TypeError("Input must from 0 to 100!");
