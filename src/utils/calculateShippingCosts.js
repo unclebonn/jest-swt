@@ -1,9 +1,9 @@
 export function calculateShippingCosts(itemList, destination) {
     let shippingRates = {
-      US: { standard: 10, express: 25 },
-      CA: { standard: 15, express: 30 },
-      EU: { standard: 20, express: 40 },
-      ASIA: { standard: 25, express: 50 },
+      JP: { standard: 20, express: 35 },
+      TW: { standard: 15, express: 30 },
+      KR: { standard: 20, express: 30 },
+      TH: { standard: 10, express: 20 },
     };
   
     if (!Array.isArray(itemList)) {

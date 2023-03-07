@@ -2,8 +2,6 @@ import {
     fireEvent,
     render,
     screen,
-    waitFor,
-    getByLabelText,
   } from "@testing-library/react";
   import Login from "../components/Login";
   import "@testing-library/jest-dom/extend-expect";

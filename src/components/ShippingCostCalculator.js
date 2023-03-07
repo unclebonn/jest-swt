@@ -5,7 +5,7 @@ import { calculateShippingCosts } from "../utils/calculateShippingCosts";
 export default function ShippingCostCalculator() {
   const [cart, setCart] = useState([]);
   const [totalPrice, setTotalPrice] = useState();
-  const [dest, setDest] = useState("US");
+  const [dest, setDest] = useState("JP");
 
   console.log(dest);
   console.log(cart);
@@ -17,14 +17,18 @@ export default function ShippingCostCalculator() {
   }, [cart, dest]);
 
   const handleAddItem = (item) => {
-    setCart(
-      (prev) => [...prev, { ...item, quantity: 1 }]
-      // prev.map((product) => {
-      //   if (product.name === item.name)
-      //     return { ...product, quantity: product.quantity + 1 };
-      //   return product;
-      // })
-    );
+    setCart((prev) => {
+      let add = false;
+      const incArr = prev.map((product) => {
+        if (product.name === item.name) {
+          add = true;
+          return { ...product, quantity: product.quantity + 1 };
+        }
+        return product;
+      });
+      if (add) return incArr;
+      return [...prev, { ...item, quantity: 1 }];
+    });
   };
 
   return (
@@ -35,10 +39,10 @@ export default function ShippingCostCalculator() {
       <div className="mb-2">
         <label>Destination</label>
         <select value={dest} onChange={(e) => setDest(e.target.value)}>
-          <option value="US">US</option>
-          <option value="CA">CA</option>
-          <option value="EU">EU</option>
-          <option value="ASIA">ASIA</option>
+          <option value="JP">Japan</option>
+          <option value="TW">Taiwan</option>
+          <option value="KR">South Korea</option>
+          <option value="TH">Thailand</option>
         </select>
       </div>
       <table className="table" border="1" align="center">

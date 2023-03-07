@@ -21,14 +21,14 @@ const Login = () => {
       }
       );
       setUser(res);
-      console.log(res);
+    //   console.log(res);
     } catch (error) {
       setUser(null);
       setError(error.message)
     }
   };
 
-  console.log(user);
+//   console.log(user);
 
   return (
     <div className="containerz mb-3" style={{ display: 'flex', margin: 'auto auto', flexDirection: 'column', alignItems:"center", gap: '20px' }}>
