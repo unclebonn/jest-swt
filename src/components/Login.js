@@ -24,7 +24,8 @@ const Login = () => {
     //   console.log(res);
     } catch (error) {
       setUser(null);
-      setError(error.message)
+      setError(error?.response?.data);
+      // console.log(error);
     }
   };
 

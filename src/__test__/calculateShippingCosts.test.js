@@ -1,19 +1,7 @@
 import { calculateShippingCosts } from "../../src/utils/calculateShippingCosts";
 
-describe("calculateShippingCosts", () => {
-  test("should calculate total cost for valid input", () => {
-    const itemList = [
-      { name: "Product A", weight: 2, price: 10, quantity: 1 },
-      { name: "Product B", weight: 3, price: 15, quantity: 2 },
-      { name: "Product C", weight: 4, price: 20, quantity: 3 },
-    ];
-    const destination = "JP";
-
-    const totalCost = calculateShippingCosts(itemList, destination);
-
-    expect(totalCost).toEqual(135);
-  });
-
+// Validate
+describe("Calculate Shipping Costs Validated Cases Test", () => {
   test("should throw an error if itemList is not an array", () => {
     const itemList = { name: "Product N", weight: 7, price: 11, quantity: 1 };
     // const itemList = [];
@@ -21,6 +9,15 @@ describe("calculateShippingCosts", () => {
 
     expect(() => calculateShippingCosts(itemList, destination)).toThrow(
       "Invalid input: itemList must be an array"
+    );
+  });
+
+  test("should throw an error if destination is not supported", () => {
+    const itemList = [];
+    const destination = "AI";
+
+    expect(() => calculateShippingCosts(itemList, destination)).toThrow(
+      "Invalid input: destination is not supported"
     );
   });
 
@@ -50,25 +47,32 @@ describe("calculateShippingCosts", () => {
       'Invalid input: item must have properties "name" (string), "weight" (number), "price" (number) and "quantity" (number)'
     );
   });
+});
+
+// Run Wells
+describe("Calculate Shipping Costs Runs Well Test", () => {
+  test("should calculate total cost for valid input", () => {
+    const itemList = [
+      { name: "Product A", weight: 2, price: 10, quantity: 1 },
+      { name: "Product B", weight: 3, price: 15, quantity: 2 },
+      { name: "Product C", weight: 4, price: 20, quantity: 3 },
+    ];
+    const destination = "JP";
+
+    const totalCost = calculateShippingCosts(itemList, destination);
+
+    expect(totalCost).toEqual(135);
+  });
 
   test("should calculate shipping cost based on total weight", () => {
     const itemList = [
-      { name: "Product A", weight: 9, price: 10, quantity: 1 },
-      { name: "Product B", weight: 1, price: 15,  quantity: 3 },
+      { name: "Product A", weight: 4, price: 10, quantity: 1 },
+      { name: "Product B", weight: 1, price: 15, quantity: 2 },
     ];
     const destination = "TW";
 
     const totalCost = calculateShippingCosts(itemList, destination);
 
-    expect(totalCost).toEqual(85);
-  });
-
-  test("should throw an error if destination is not supported", () => {
-    const itemList = [];
-    const destination = "AI";
-
-    expect(() => calculateShippingCosts(itemList, destination)).toThrow(
-      "Invalid input: destination is not supported"
-    );
+    expect(totalCost).toEqual(55);
   });
 });
