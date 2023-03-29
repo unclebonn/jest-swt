@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import { fibonacci } from "./fibonancci";
+
 function App() {
   const [result, setResult] = useState(undefined);
   const [error, setError] = useState(undefined);
@@ -27,10 +28,16 @@ function App() {
         <button onClick={() => onClick()} className="btn btn-outline-secondary" type="button" id="button-addon1">Fibonacci</button>
       </div>
 
+     
+
       {error && <h4 className="text-center mt-2 text-danger">{error}</h4>}
 
       {/* Result */}
       <h2 className="text-center mt-5">Result: {result && result}</h2>
+
+      <h1 className="text-center">---------------------------------------</h1>
+
+     
     </div>
   );
 }

@@ -1,0 +1,54 @@
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
+    border-width: unset;
+}
+
+.cart {
+    width: 50%;
+    margin: 0 auto;
+
+    .column {
+        text-align: center;
+        margin-top: 20px;
+        border: 1px dashed black;
+        box-shadow: 6px 12px #888888;
+
+        .item {
+            padding: 25px;
+
+            .table {
+                width: 85%;
+
+                .card-btn {
+                    position: relative;
+                    top: 0;
+                    height: auto;
+                    border: none;
+                    color: black;
+                    background-color: grey !important;
+                    border-radius: 7px;
+
+
+                }
+            }
+        }
+        .totalPrice{
+            width: 100%;
+            
+            h2{
+               margin-right: 300px;
+                
+            }
+        }
+    }
+    .destination {
+        padding-bottom: 20px
+    }
+}
+
+
+

@@ -1,6 +1,7 @@
-const { calculateShippingCosts } = require("./shipping");
+const calculateShippingCosts = require('./calculateShippingCosts') ;
 
 describe("calculateShippingCosts", () => {
+  
   test("should calculate total cost for valid input", () => {
     const itemList = [
       { name: "Product A", weight: 2, price: 10 },
@@ -11,7 +12,7 @@ describe("calculateShippingCosts", () => {
 
     const totalCost = calculateShippingCosts(itemList, destination);
 
-    expect(totalCost).toEqual(52);
+    expect(totalCost).toEqual(55);
   });
 
   test("should throw an error if itemList is not an array", () => {

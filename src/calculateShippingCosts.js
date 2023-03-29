@@ -1,4 +1,4 @@
-function calculateShippingCosts(itemList, destination) {
+ function calculateShippingCosts(itemList, destination) {
     const shippingRates = {
       US: { standard: 10, express: 25 },
       CA: { standard: 15, express: 30 },
@@ -44,4 +44,6 @@ function calculateShippingCosts(itemList, destination) {
   
     return totalCost + shippingCost;
   }
+
+  module.exports = calculateShippingCosts;
   

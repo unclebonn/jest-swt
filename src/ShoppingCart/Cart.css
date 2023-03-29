@@ -1,0 +1,43 @@
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
+  border-width: unset;
+}
+
+.cart {
+  width: 50%;
+  margin: 0 auto;
+}
+.cart .column {
+  text-align: center;
+  margin-top: 20px;
+  border: 1px dashed black;
+  box-shadow: 6px 12px #888888;
+}
+.cart .column .item {
+  padding: 25px;
+}
+.cart .column .item .table {
+  width: 85%;
+}
+.cart .column .item .table .card-btn {
+  position: relative;
+  top: 0;
+  height: auto;
+  border: none;
+  color: black;
+  background-color: grey !important;
+  border-radius: 7px;
+}
+.cart .column .totalPrice {
+  width: 100%;
+}
+.cart .column .totalPrice h2 {
+  margin-right: 300px;
+}
+.cart .destination {
+  padding-bottom: 20px;
+}/*# sourceMappingURL=Cart.css.map */
