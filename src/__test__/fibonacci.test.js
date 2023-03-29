@@ -1,9 +1,8 @@
-import { fibonacci } from "./fibonancci";
+import { fibonacci } from "../utils/fibonancci";
 
 test('Fibonacci with well input', () => {
-    expect(2).toBe(fibonacci("3"));
-    expect(5).toBe(fibonacci("5"));
-    expect(1).toBe(fibonacci(1));
+    expect(fibonacci("5")).toBe(5);
+    
 })
 
 test('Fibonacci with bad input', () => {

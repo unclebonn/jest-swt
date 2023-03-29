@@ -33,7 +33,7 @@ jobs:
       - name: Make hyperlink to build file
         uses: actions/upload-artifact@v1
         with:
-          name: DOWNLOAD-BUILD-FILE-HERE 
+          name: DOWNLOAD-BUILD-FILE-HERE
           path: build
 
       - name: Deploy with gh-pages
